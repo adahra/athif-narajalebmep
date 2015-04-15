@@ -1,0 +1,65 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${relativePackage}.${activityClass}" >
+
+   <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <ImageButton
+            android:id="@+id/imgBtnMateriPengukuranDebitPlay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/image_string_content_description"
+            android:src="@android:drawable/ic_media_play" />
+
+        <ImageButton
+            android:id="@+id/imgBtnMateriPengukuranDebitStop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/image_string_content_description"
+            android:src="@android:drawable/ic_media_pause" />
+    </TableRow>
+
+    <TextView
+        android:id="@+id/txtViewMateriPengukuranDebit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tableRow1"
+        android:text="@string/isi_materi_text" />
+
+    <ImageButton
+        android:id="@+id/imgBtnMateriPengukuranDebitTampil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/txtViewMateriPengukuranDebit"
+        android:contentDescription="@string/image_string_content_description"
+        android:src="@android:drawable/bottom_bar" />
+
+    <Button
+        android:id="@+id/btnMateriPengukuranDebitKembali"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/imgBtnMateriPengukuranDebitTampil"
+        android:text="@string/isi_materi_kembali" />
+
+    <Button
+        android:id="@+id/btnMateriPengukuranDebitSelanjutnya"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnMateriPengukuranDebitKembali"
+        android:layout_alignBottom="@+id/btnMateriPengukuranDebitKembali"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:text="@string/isi_materi_selanjutnya" />
+
+</RelativeLayout>
