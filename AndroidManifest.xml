@@ -19,9 +19,8 @@
             android:name=".MenuUtama"
             android:label="@string/app_name" >
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
         <activity
@@ -30,11 +29,7 @@
         </activity>
         <activity
             android:name=".IsiMateri"
-            android:label="@string/title_activity_isi_materi"
-            android:parentActivityName=".Materi" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value=".Materi" />
+            android:label="@string/title_activity_isi_materi">
         </activity>
         <activity
             android:name=".MateriGeometri"
@@ -59,6 +54,10 @@
         <activity
             android:name=".MateriSistemKoordinat"
             android:label="@string/title_activity_materi_sistem_koordinat" >
+        </activity>
+        <activity
+            android:name=".TestJson"
+            android:label="@string/title_activity_test_json" >
         </activity>
     </application>
 
