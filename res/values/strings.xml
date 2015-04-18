@@ -18,7 +18,7 @@
     <string name="materi_kembali">Kembali</string>
     <string name="title_activity_isi_materi">IsiMateri</string>
     <string name="image_string_content_description">todo</string>
-    <string name="isi_materi_text">isi disini diambil dari database</string>
+    <string name="isi_materi_text"> </string>
     <string name="isi_materi_kembali">Kembali</string>
     <string name="isi_materi_selanjutnya">Selanjutnya</string>
     <string name="title_activity_materi_geometri">MateriGeometri</string>
@@ -27,5 +27,10 @@
     <string name="title_activity_materi_operasi_hitung_bilangan_bulat">MateriOperasiHitungBilanganBulat</string>
     <string name="title_activity_materi_pengukuran_debit">MateriPengukuranDebit</string>
     <string name="title_activity_materi_sistem_koordinat">MateriSistemKoordinat</string>
+    <string name="title_activity_test_json">TestJson</string>
+    <string name="info">Website Information from URL</string>
+    <string name="wid">ID</string>
+    <string name="name">Name</string>
+    <string name="url">Website</string>
 
 </resources>
