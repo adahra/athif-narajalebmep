@@ -2,7 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="${relativePackage}.${activityClass}" >
+    tools:context="${relativePackage}.${activityClass}"
+    tools:ignore="ExtraText" >
 
     <TableRow
         android:id="@+id/tableRow1"
@@ -14,24 +15,35 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@string/image_string_content_description"
-            android:src="@android:drawable/ic_media_play" />
+            android:src="@android:drawable/ic_media_play"/>
 
         <ImageButton
             android:id="@+id/imgBtnMateriGeometriStop"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@string/image_string_content_description"
-            android:src="@android:drawable/ic_media_pause" />
+            android:src="@android:drawable/ic_media_pause"/>
     </TableRow>
 
+    <TextView 
+        android:id="@+id/txtViewJudul"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/tableRow1"
+        android:text="@string/isi_materi_text"
+        android:textSize="24sp"/>"
+    
     <TextView
         android:id="@+id/txtViewMateriGeometri"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/tableRow1"
-        android:text="@string/isi_materi_text" />
+        android:layout_below="@+id/txtViewJudul"
+        android:text="@string/isi_materi_text"
+        android:textSize="16sp"/>
 
     <ImageButton
         android:id="@+id/imgBtnMateriGeometriTampil"
@@ -41,7 +53,7 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/txtViewMateriGeometri"
         android:contentDescription="@string/image_string_content_description"
-        android:src="@android:drawable/bottom_bar" />
+        android:src="@android:drawable/bottom_bar"/>
 
     <Button
         android:id="@+id/btnMateriGeometriKembali"
@@ -61,5 +73,14 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:text="@string/isi_materi_selanjutnya" />
+
+    <ListView
+        android:id="@+id/lvTest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true" >
+    </ListView>
 
 </RelativeLayout>
