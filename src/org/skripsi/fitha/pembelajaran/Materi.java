@@ -16,7 +16,7 @@ public class Materi extends Activity implements OnClickListener {
 	private Button btnMateriSistemKoordinat;
 	private Button btnMateriKembali;
 	private Intent intent;
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -57,11 +57,13 @@ public class Materi extends Activity implements OnClickListener {
 			Materi.this.finish();
 			break;
 		case R.id.btnMateriMengolahData:
-			intent = new Intent(getApplicationContext(), MateriMengolahData.class);
+			intent = new Intent(getApplicationContext(),
+					MateriMengolahData.class);
 			startActivity(intent);
 			break;
 		case R.id.btnMateriOperasiHitungBilanganBulat:
-			intent = new Intent(getApplicationContext(), MateriOperasiHitungBilanganBulat.class);
+			intent = new Intent(getApplicationContext(),
+					MateriOperasiHitungBilanganBulat.class);
 			startActivity(intent);
 			break;
 		case R.id.btnMateriPecahan:
@@ -69,11 +71,13 @@ public class Materi extends Activity implements OnClickListener {
 			startActivity(intent);
 			break;
 		case R.id.btnMateriPengukuranDebit:
-			intent = new Intent(getApplicationContext(), MateriPengukuranDebit.class);
+			intent = new Intent(getApplicationContext(),
+					MateriPengukuranDebit.class);
 			startActivity(intent);
 			break;
 		case R.id.btnMateriSistemKoordinat:
-			intent = new Intent(getApplicationContext(), MateriSistemKoordinat.class);
+			intent = new Intent(getApplicationContext(),
+					MateriSistemKoordinat.class);
 			startActivity(intent);
 			break;
 		default:

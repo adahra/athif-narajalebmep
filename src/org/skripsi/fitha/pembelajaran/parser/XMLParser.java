@@ -24,22 +24,24 @@ import org.xml.sax.SAXException;
 import android.util.Log;
 
 public class XMLParser {
-	
+
 	/**
 	 * Konstruktor dari kelas
 	 */
 	public XMLParser() {
-		
+
 	}
-	
+
 	/**
 	 * Mengambil XML dari URL menggunakan permintaan HTTP
-	 * @param url link url
+	 * 
+	 * @param url
+	 *            link url
 	 * @return xml
 	 */
 	public String getXmlFromUrl(String url) {
 		String xml = null;
-		
+
 		try {
 			DefaultHttpClient httpClient = new DefaultHttpClient();
 			HttpPost httpPost = new HttpPost();
@@ -53,19 +55,21 @@ public class XMLParser {
 		} catch (IOException ioe) {
 			ioe.printStackTrace();
 		}
-		
+
 		return xml;
 	}
-	
+
 	/**
 	 * Mengambil elemen XML DOM
-	 * @param xml string xml
+	 * 
+	 * @param xml
+	 *            string xml
 	 * @return doc
 	 */
 	public Document getDomElement(String xml) {
 		Document doc = null;
 		DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-		
+
 		try {
 			DocumentBuilder db = dbf.newDocumentBuilder();
 			InputSource is = new InputSource();
@@ -81,35 +85,41 @@ public class XMLParser {
 			Log.e("Error: ", ioe.getMessage());
 			return null;
 		}
-		
+
 		return doc;
 	}
-	
+
 	/**
 	 * Mengambil nilai node
-	 * @param elemen elemen dari node
+	 * 
+	 * @param elemen
+	 *            elemen dari node
 	 * @return none
 	 */
 	public final String ambilElemenNilai(Node elemen) {
 		Node child;
-		
+
 		if (elemen != null) {
 			if (elemen.hasChildNodes()) {
-				for (child = elemen.getFirstChild(); child != null; child = child.getNextSibling()) {
+				for (child = elemen.getFirstChild(); child != null; child = child
+						.getNextSibling()) {
 					if (child.getNodeType() == Node.TEXT_NODE) {
 						return child.getNodeValue();
 					}
 				}
 			}
 		}
-		
+
 		return "";
 	}
-	
+
 	/**
 	 * Mengambil nilai node
-	 * @param item elemen dari node
-	 * @param str string 
+	 * 
+	 * @param item
+	 *            elemen dari node
+	 * @param str
+	 *            string
 	 * @return ambil elemen nilai
 	 */
 	public String ambilNilai(Element item, String str) {

@@ -10,7 +10,7 @@ import android.widget.Toast;
 public class IsiMateri extends Activity implements OnClickListener {
 	private Button btnIsiMateriKembali;
 	private Button btnIsiMateriSelanjutnya;
-	
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

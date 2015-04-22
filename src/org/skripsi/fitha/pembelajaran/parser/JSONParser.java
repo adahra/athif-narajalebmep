@@ -35,30 +35,31 @@ public class JSONParser {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		try {
-			BufferedReader reader = new BufferedReader(new InputStreamReader(is, "iso-8859-1"), 8);
+			BufferedReader reader = new BufferedReader(new InputStreamReader(
+					is, "iso-8859-1"), 8);
 			StringBuilder stringBuilder = new StringBuilder();
 			String line = null;
 			while ((line = reader.readLine()) != null) {
 				stringBuilder.append(line);
 			}
-			
+
 			is.close();
 			json = stringBuilder.toString();
 		} catch (Exception e) {
 			Log.e("Buffer Error", "Error parsing data " + e.toString());
 		}
-		
+
 		try {
 			jObj = new JSONObject(json);
 		} catch (Exception e) {
 			Log.e("JSON Parser", "Error parsing data " + e.toString());
 		}
-		
+
 		return jObj;
 	}
-	
+
 	public JSONObject makeHttpRequest(String url, String method,
 			List<NameValuePair> params) {
 		try {
@@ -89,7 +90,7 @@ public class JSONParser {
 					is, "iso-8859-1"), 8);
 			StringBuilder sb = new StringBuilder();
 			String line = null;
-			
+
 			while ((line = reader.readLine()) != null) {
 				sb.append(line + "\n");
 			}

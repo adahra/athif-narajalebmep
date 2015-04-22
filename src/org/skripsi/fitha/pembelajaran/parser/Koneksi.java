@@ -1,10 +1,14 @@
 package org.skripsi.fitha.pembelajaran.parser;
 
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+
 public class Koneksi {
-	String urlLearning = null;
+	private String urlLearning = null;
 
 	public Koneksi(String url) {
-		urlLearning = urlLearning + url;
+		urlLearning = url;
 	}
 
 	public Koneksi() {
@@ -17,5 +21,17 @@ public class Koneksi {
 
 	public String getUrl() {
 		return urlLearning;
+	}
+
+	public boolean cekStatus(Context context) {
+		ConnectivityManager koneksi = (ConnectivityManager) context
+				.getSystemService(Context.CONNECTIVITY_SERVICE);
+		NetworkInfo koneksiInfo = koneksi.getActiveNetworkInfo();
+
+		if (koneksiInfo != null && koneksiInfo.isConnected()) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 }

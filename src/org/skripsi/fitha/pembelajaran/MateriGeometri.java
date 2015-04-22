@@ -9,18 +9,21 @@ import org.json.JSONObject;
 import org.skripsi.fitha.pembelajaran.parser.JSONParser;
 
 import android.app.Activity;
+// import android.app.AlertDialog;
+// import android.app.Dialog;
 import android.app.ProgressDialog;
+// import android.content.DialogInterface;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.renderscript.Font;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
+import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
+import android.widget.SimpleAdapter;
 
 public class MateriGeometri extends Activity implements OnClickListener,
 		OnItemClickListener {
@@ -28,16 +31,13 @@ public class MateriGeometri extends Activity implements OnClickListener,
 
 	private Button btnMateriGeometriKembali;
 	private Button btnMateriGeometriSelanjutnya;
-	private TextView txtViewJudul;
-	private TextView txtViewMateri;
 	private ListView lvViewMateri;
 
+	// private static final int tampilError = 1;
 	private ProgressDialog mProgressDialog;
 
 	private JSONArray materi = null;
 
-	// private static final String LINK_URL =
-	// "http://www.e-learningmatematika.esy.es/jsongeometri.php";
 	private static final String LINK_URL = "http://pejuangcinta.nazuka.net/jsongeometri.php";
 	private static final String ARRAY_SUB_JUDUL = "sub_judul";
 	private static final String ARRAY_ANAK_SUB_BAB = "anak_subbab";
@@ -62,27 +62,31 @@ public class MateriGeometri extends Activity implements OnClickListener,
 		lvViewMateri = (ListView) findViewById(R.id.lvTest);
 		lvViewMateri.setOnItemClickListener(this);
 
-		txtViewMateri = (TextView) findViewById(R.id.txtViewMateriGeometri);
-		txtViewJudul = (TextView) findViewById(R.id.txtViewJudul);
-	
-		// this.testJson();
 		new GetMateriGeometri().execute();
+
+		/*
+		 * if (koneksi.cekStatus(this.getApplicationContext())) { koneksi = new
+		 * Koneksi(LINK_URL); new GetMateriGeometri().execute(); } else {
+		 * showDialog(tampilError); }
+		 */
 	}
 
 	/*
-	 * private void testJson() { JSONParser jParser = new JSONParser();
-	 * JSONObject json = jParser.ambilJSonUrl(LINK_URL);
+	 * @Override protected Dialog onCreateDialog(int id) { Dialog dialog = null;
+	 * switch (id) { case tampilError: AlertDialog.Builder errorDialog = new
+	 * AlertDialog.Builder( getApplicationContext());
+	 * errorDialog.setTitle("Kesalahan Koneksi");
+	 * errorDialog.setMessage("Tidak ditemukan koneksi internet");
+	 * errorDialog.setNegativeButton("OK", new DialogInterface.OnClickListener()
+	 * {
 	 * 
-	 * try { materi = json.getJSONArray(ARRAY_MATERI); for (int i = 0; i <
-	 * materi.length(); i++) { JSONObject arr = materi.getJSONObject(i); String
-	 * subJudul = arr.getString(ARRAY_SUB_JUDUL); String anakSubJudul =
-	 * arr.getString(ARRAY_ANAK_SUB_BAB); String isiMateri =
-	 * arr.getString(ARRAY_ISI_MATERI); HashMap<String, String> map = new
-	 * HashMap<String, String>(); map.put(ARRAY_SUB_JUDUL, subJudul);
-	 * map.put(ARRAY_ANAK_SUB_BAB, anakSubJudul); map.put(ARRAY_ISI_MATERI,
-	 * isiMateri); daftarMateri.add(map); Log.e(TAG, "sub judul: " + subJudul +
-	 * ", anak sub bab: " + anakSubJudul + ", isi materi: " + isiMateri); } }
-	 * catch (Exception e) { e.printStackTrace(); } }
+	 * @Override public void onClick(DialogInterface dialog, int which) {
+	 * dialog.dismiss(); } });
+	 * 
+	 * AlertDialog errorAlert = errorDialog.create(); return errorAlert;
+	 * default: break; }
+	 * 
+	 * return dialog; }
 	 */
 
 	@Override
@@ -129,6 +133,12 @@ public class MateriGeometri extends Activity implements OnClickListener,
 					anakSubBab = arrayJson.getString(ARRAY_ANAK_SUB_BAB);
 					isiMateri = arrayJson.getString(ARRAY_ISI_MATERI);
 
+					HashMap<String, String> map = new HashMap<String, String>();
+					map.put(ARRAY_SUB_JUDUL, subJudul);
+					map.put(ARRAY_ANAK_SUB_BAB, anakSubBab);
+					map.put(ARRAY_ISI_MATERI, isiMateri);
+					daftarMateri.add(map);
+
 					Log.d(TAG, "sub judul: " + subJudul + ", anak sub bab: "
 							+ anakSubBab + ", isi materi: " + isiMateri);
 				}
@@ -147,9 +157,13 @@ public class MateriGeometri extends Activity implements OnClickListener,
 
 				@Override
 				public void run() {
-					txtViewJudul.setText(subJudul + "");
-					txtViewMateri.setText(anakSubBab + "\n"
-							+ isiMateri + "\n");
+					ListAdapter adapter = new SimpleAdapter(
+							MateriGeometri.this, daftarMateri,
+							R.layout.list_item, new String[] {
+									ARRAY_ANAK_SUB_BAB, ARRAY_SUB_JUDUL },
+							new int[] { R.id.sub_judul, R.id.materi, });
+
+					lvViewMateri.setAdapter(adapter);
 				}
 			});
 		}
@@ -159,6 +173,6 @@ public class MateriGeometri extends Activity implements OnClickListener,
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position,
 			long id) {
-
+		
 	}
 }
