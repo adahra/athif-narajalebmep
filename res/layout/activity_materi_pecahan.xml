@@ -6,8 +6,9 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="org.skripsi.fitha.pembelajaran.MateriPecahan" >
-
+    tools:context="${relativePackage}.${activityClass}"
+    tools:ignore="ExtraText" >
+    
    <TableRow
         android:id="@+id/tableRow1"
         android:layout_width="wrap_content"
@@ -29,14 +30,26 @@
     </TableRow>
 
     <TextView
-        android:id="@+id/txtViewMateriPecahan"
+        android:id="@+id/txtViewJudul"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/tableRow1"
-        android:text="@string/isi_materi_text" />
+        android:text="@string/isi_materi_text"
+        android:textSize="24sp"/>"
+    
+    <TextView
+        android:id="@+id/txtViewMateriPecahan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/txtViewJudul"
+        android:text="@string/isi_materi_text"
+        android:textSize="16sp"/>
 
+  
     <ImageButton
         android:id="@+id/imgBtnMateriPecahanTampil"
         android:layout_width="wrap_content"
@@ -65,5 +78,15 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:text="@string/isi_materi_selanjutnya" />
+    
+    <ListView
+        android:id="@+id/lvTest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true" >
+    </ListView>
+    
 
 </RelativeLayout>
