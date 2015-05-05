@@ -15,14 +15,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@string/image_string_content_description"
-            android:src="@android:drawable/ic_media_play" />
+            android:src="@android:drawable/ic_media_play"
+            android:visibility="invisible"
+            tools:ignore="UnusedAttribute" />
 
         <ImageButton
             android:id="@+id/imgBtnMateriOperasiHitungBilanganBulatStop"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@string/image_string_content_description"
-            android:src="@android:drawable/ic_media_pause" />
+            android:src="@android:drawable/ic_media_pause"
+            android:visibility="invisible"
+            tools:ignore="UnusedAttribute" />
+
     </TableRow>
 
     <TextView
@@ -33,7 +38,8 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/tableRow1"
         android:text="@string/isi_materi_text"
-        android:textSize="24sp" />
+        android:textSize="24sp"
+        android:visibility="invisible"  />
     
     <TextView
         android:id="@+id/txtViewMateriOperasiHitungBilanganBulat"
@@ -43,9 +49,9 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/txtViewJudul"
         android:text="@string/isi_materi_text"
-        android:textSize="16sp"/>
+        android:textSize="16sp"
+        android:visibility="invisible" />
     
-
     <ImageButton
         android:id="@+id/imgBtnMateriOperasiHitungBilanganBulatTampil"
         android:layout_width="wrap_content"
@@ -54,8 +60,10 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/txtViewMateriOperasiHitungBilanganBulat"
         android:contentDescription="@string/image_string_content_description"
-        android:src="@android:drawable/bottom_bar" />
-
+        android:src="@android:drawable/bottom_bar"
+        android:visibility="invisible"
+        tools:ignore="UnusedAttribute" />
+      
     <Button
         android:id="@+id/btnMateriOperasiHitungBilanganBulatKembali"
         android:layout_width="wrap_content"
@@ -63,7 +71,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/imgBtnMateriOperasiHitungBilanganBulatTampil"
-        android:text="@string/isi_materi_kembali" />
+        android:text="@string/isi_materi_kembali" 
+        android:visibility="invisible" />
 
     <Button
         android:id="@+id/btnMateriOperasiHitungBilanganBulatSelanjutnya"
@@ -73,10 +82,11 @@
         android:layout_alignBottom="@+id/btnMateriOperasiHitungBilanganBulatKembali"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:text="@string/isi_materi_selanjutnya" />
+        android:text="@string/isi_materi_selanjutnya" 
+        android:visibility="invisible" />
     
     <ListView
-        android:id="@+id/lvTest"
+        android:id="@+id/lvMateriOperasiHitungBilanganBulat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
