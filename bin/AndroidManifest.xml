@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.skripsi.fitha.pembelajaran"
-    android:installLocation="auto"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -14,7 +13,6 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
-        android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
@@ -28,40 +26,36 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".Materi"
+            android:name=".materi.Materi"
             android:label="@string/title_activity_materi" >
         </activity>
         <activity
-            android:name=".IsiMateri"
+            android:name=".materi.IsiMateri"
             android:label="@string/title_activity_isi_materi" >
         </activity>
         <activity
-            android:name=".MateriGeometri"
+            android:name=".materi.MateriGeometri"
             android:label="@string/title_activity_materi_geometri" >
         </activity>
         <activity
-            android:name=".MateriPecahan"
+            android:name=".materi.MateriPecahan"
             android:label="@string/title_activity_materi_pecahan" >
         </activity>
         <activity
-            android:name=".MateriMengolahData"
+            android:name=".materi.MateriMengolahData"
             android:label="@string/title_activity_materi_mengolah_data" >
         </activity>
         <activity
-            android:name=".MateriOperasiHitungBilanganBulat"
+            android:name=".materi.MateriOperasiHitungBilanganBulat"
             android:label="@string/title_activity_materi_operasi_hitung_bilangan_bulat" >
         </activity>
         <activity
-            android:name=".MateriPengukuranDebit"
+            android:name=".materi.MateriPengukuranDebit"
             android:label="@string/title_activity_materi_pengukuran_debit" >
         </activity>
         <activity
-            android:name=".MateriSistemKoordinat"
+            android:name=".materi.MateriSistemKoordinat"
             android:label="@string/title_activity_materi_sistem_koordinat" >
-        </activity>
-        <activity
-            android:name=".TestJson"
-            android:label="@string/title_activity_test_json" >
         </activity>
     </application>
 
