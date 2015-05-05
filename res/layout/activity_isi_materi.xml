@@ -60,6 +60,7 @@
         android:layout_alignBottom="@+id/btnIsiMateriKembali"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:text="@string/isi_materi_selanjutnya" />
+        android:text="@string/isi_materi_selanjutnya" 
+        android:visibility="gone"/>
 
 </RelativeLayout>
