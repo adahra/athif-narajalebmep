@@ -5,7 +5,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
 public class Koneksi {
-	private String urlLearning = null;
+	private String urlLearning = "http://elearningmath.nazuka.net/";
 
 	public Koneksi(String url) {
 		urlLearning = url;
