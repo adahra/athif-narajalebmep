@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/tvnilai"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/Nilai"
+        android:textSize="30dp" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TableRow
+            android:id="@+id/tbmateri"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/tvmateri"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/Materi"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/tvhasil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/Hasil"
+                android:textSize="20dp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tbmateri1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/tvmateri1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Operasi_Hitung_Bilangan_Bulat"
+                android:textSize="17dp" />
+
+            <TextView
+                android:id="@+id/tvhasil1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="17dp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tbmateri2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/tvmateri2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Pengukuran_Debit"
+                android:textSize="17dp" />
+
+            <TextView
+                android:id="@+id/tvhasil2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="17dp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tbmateri3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/tvmateri3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Geometri"
+                android:textSize="17dp" />
+
+            <TextView
+                android:id="@+id/tvhasil3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="17dp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tbmateri4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/tvmateri4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Mengolah_Data"
+                android:textSize="17dp" />
+
+            <TextView
+                android:id="@+id/tvhasil4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="17dp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tbmateri5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/tvmateri5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Pecahan"
+                android:textSize="17dp" />
+
+            <TextView
+                android:id="@+id/tvhasil5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="17dp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tbmateri6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/tvmateri6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/Sistem_Koordinat"
+                android:textSize="17dp" />
+
+            <TextView
+                android:id="@+id/tvhasil6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="17dp" />
+        </TableRow>
+
+        <TableRow>
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tbtotalnilai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/tvtotallnilai"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/Total_Nilai"
+                android:textSize="17dp" />
+
+            <TextView
+                android:id="@+id/tvhasil7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="17dp" />
+        </TableRow>
+    </TableLayout>
+    
+    <TableRow
+            android:id="@+id/tbkembali"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+    <Button
+        android:id="@+id/btnkembali"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Kembali" />
+    
+    <Button
+        android:id="@+id/btncekkuncijawaban"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Kunci_Jawaban" />
+ </TableRow>
+  
+     
+ 
+</LinearLayout>
