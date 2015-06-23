@@ -32,5 +32,25 @@
     <string name="wid">ID</string>
     <string name="name">Name</string>
     <string name="url">Website</string>
+    <string name="pertanyaan">Pertanyaan</string>
+    <string name="jawaban">Jawaban</string>
+    <string name="Selanjutnya">Selanjutnya</string>
+    <string name="NILAI">nilai</string>
+    <string name="tvnilai">NILAI</string>
+    <string name="Nilai">NILAI</string>
+    <string name="Materi">Materi</string>
+    <string name="Hasil">Hasil</string>
+    <string name="Operasi_Hitung_Bilangan_Bulat">Operasi Hitung Bilangan Bulat</string>
+    <string name="Hasil1">Hasil1</string>
+    <string name="Pengukuran_Debit">Pengukuran Debit</string>
+    <string name="Geometri">Geometri</string>
+    <string name="Mengolah_Data">Mengolah Data</string>
+    <string name="Pecahan">Pecahan</string>
+    <string name="Sistem_Koordinat">Sistem Koordinat</string>
+    <string name="Total_Nilai">Total Nilai</string>
+    <string name="Kembali">Kembali</string>
+    <string name="Kunci_Jawaban">Kunci Jawaban</string>
+    <string name="Jawaban_Benar">Jawaban Benar</string>
+    <string name="Pilihan_Jawaban">Pilihan Jawaban</string>
 
 </resources>
