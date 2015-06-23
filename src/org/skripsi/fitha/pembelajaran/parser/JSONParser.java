@@ -47,6 +47,7 @@ public class JSONParser {
 
 			is.close();
 			json = stringBuilder.toString();
+			Log.e("jObj", ":"+json);
 		} catch (Exception e) {
 			Log.e("Buffer Error", "Error parsing data " + e.toString());
 		}
