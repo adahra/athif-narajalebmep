@@ -7,7 +7,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.skripsi.fitha.pembelajaran.R;
-import org.skripsi.fitha.pembelajaran.database.Database;
 import org.skripsi.fitha.pembelajaran.parser.JSONParser;
 
 import android.app.Activity;
@@ -37,6 +36,12 @@ public class MateriGeometri extends Activity implements OnClickListener,
 	private String subJudul;
 	private String anakSubBab;
 	private String isiMateri;
+	private String gambar;
+	private String gambar2;
+	private String gambar3;
+	private String gambar4;
+	private String gambar5;
+	private String suara;
 	
 	private Button btnMateriGeometriKembali;
 	private Button btnMateriGeometriSelanjutnya;
@@ -47,15 +52,19 @@ public class MateriGeometri extends Activity implements OnClickListener,
 
 	private JSONArray materi = null;
 
-	private static final String LINK_URL = "http://pejuangcinta.nazuka.net/jsongeometri.php";
+	private static final String LINK_URL = "http://elearningmath.nazuka.net/jsongeometri.php";
 	private static final String ARRAY_SUB_JUDUL = "sub_judul";
 	private static final String ARRAY_ANAK_SUB_BAB = "anak_subbab";
 	private static final String ARRAY_ISI_MATERI = "isi_materi";
 	private static final String ARRAY_MATERI = "materi";
+	private static final String ARRAY_GAMBAR = "gambar";
+	private static final String ARRAY_GAMBAR2 = "gambar2";
+	private static final String ARRAY_GAMBAR3 = "gambar3";
+	private static final String ARRAY_GAMBAR4 = "gambar4";
+	private static final String ARRAY_GAMBAR5 = "gambar5";
+	private static final String ARRAY_SUARA = "suara";
 
 	private ArrayList<HashMap<String, String>> daftarMateri;
-	
-	private Database database;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -63,8 +72,6 @@ public class MateriGeometri extends Activity implements OnClickListener,
 		setContentView(R.layout.activity_materi_geometri);
 
 		daftarMateri = new ArrayList<HashMap<String, String>>();
-		
-		database = new Database(getApplicationContext());
 
 		btnMateriGeometriKembali = (Button) findViewById(R.id.btnMateriGeometriKembali);
 		btnMateriGeometriKembali.setOnClickListener(this);
@@ -77,32 +84,7 @@ public class MateriGeometri extends Activity implements OnClickListener,
 
 		new GetMateriGeometri().execute();
 
-		// database.getWritableDatabase().execSQL(sql);
-		
-		/*
-		 * if (koneksi.cekStatus(this.getApplicationContext())) { koneksi = new
-		 * Koneksi(LINK_URL); new GetMateriGeometri().execute(); } else {
-		 * showDialog(tampilError); }
-		 */
 	}
-
-	/*
-	 * @Override protected Dialog onCreateDialog(int id) { Dialog dialog = null;
-	 * switch (id) { case tampilError: AlertDialog.Builder errorDialog = new
-	 * AlertDialog.Builder( getApplicationContext());
-	 * errorDialog.setTitle("Kesalahan Koneksi");
-	 * errorDialog.setMessage("Tidak ditemukan koneksi internet");
-	 * errorDialog.setNegativeButton("OK", new DialogInterface.OnClickListener()
-	 * {
-	 * 
-	 * @Override public void onClick(DialogInterface dialog, int which) {
-	 * dialog.dismiss(); } });
-	 * 
-	 * AlertDialog errorAlert = errorDialog.create(); return errorAlert;
-	 * default: break; }
-	 * 
-	 * return dialog; }
-	 */
 
 	@Override
 	public void onClick(View v) {
@@ -121,8 +103,7 @@ public class MateriGeometri extends Activity implements OnClickListener,
 		protected void onPreExecute() {
 			super.onPreExecute();
 			mProgressDialog = new ProgressDialog(MateriGeometri.this);
-			mProgressDialog
-					.setMessage("Memuat Materi Geometri. Silahkan Tunggu!");
+			mProgressDialog.setMessage("Memuat Materi Geometri. Silahkan Tunggu!");
 			mProgressDialog.setIndeterminate(false);
 			mProgressDialog.setCancelable(true);
 			mProgressDialog.show();
@@ -141,11 +122,24 @@ public class MateriGeometri extends Activity implements OnClickListener,
 					subJudul = arrayJson.getString(ARRAY_SUB_JUDUL);
 					anakSubBab = arrayJson.getString(ARRAY_ANAK_SUB_BAB);
 					isiMateri = arrayJson.getString(ARRAY_ISI_MATERI);
-
+					gambar = arrayJson.getString(ARRAY_GAMBAR);
+					gambar2 = arrayJson.getString(ARRAY_GAMBAR2);
+					gambar3 = arrayJson.getString(ARRAY_GAMBAR3);
+					gambar4 = arrayJson.getString(ARRAY_GAMBAR4);
+					gambar5 = arrayJson.getString(ARRAY_GAMBAR5);
+					suara = arrayJson.getString(ARRAY_SUARA);
+					
 					HashMap<String, String> map = new HashMap<String, String>();
 					map.put(ARRAY_SUB_JUDUL, subJudul);
 					map.put(ARRAY_ANAK_SUB_BAB, anakSubBab);
 					map.put(ARRAY_ISI_MATERI, isiMateri);
+					map.put(ARRAY_GAMBAR, gambar);
+					map.put(ARRAY_GAMBAR2, gambar2);
+					map.put(ARRAY_GAMBAR3, gambar3);
+					map.put(ARRAY_GAMBAR4, gambar4);
+					map.put(ARRAY_GAMBAR5, gambar5);
+					map.put(ARRAY_SUARA, suara);
+					
 					daftarMateri.add(map);
 
 					Log.d(TAG, "sub judul: " + subJudul + ", anak sub bab: "
@@ -185,6 +179,14 @@ public class MateriGeometri extends Activity implements OnClickListener,
 		HashMap<String, String> map = daftarMateri.get(position);
 		Intent mIntent = new Intent(getApplicationContext(), IsiMateri.class);
 		mIntent.putExtra(ARRAY_ISI_MATERI, map.get(ARRAY_ISI_MATERI));
+		mIntent.putExtra(ARRAY_GAMBAR, map.get(ARRAY_GAMBAR));
+		mIntent.putExtra(ARRAY_GAMBAR2, map.get(ARRAY_GAMBAR2));
+		mIntent.putExtra(ARRAY_GAMBAR3, map.get(ARRAY_GAMBAR3));
+		mIntent.putExtra(ARRAY_GAMBAR4, map.get(ARRAY_GAMBAR4));
+		mIntent.putExtra(ARRAY_GAMBAR5, map.get(ARRAY_GAMBAR5));
+		mIntent.putExtra(ARRAY_SUARA, map.get(ARRAY_SUARA));
+		
+		
 		startActivity(mIntent);
 	}
 }
