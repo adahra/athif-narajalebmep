@@ -1,5 +1,7 @@
 package org.skripsi.fitha.pembelajaran;
 
+import org.skripsi.fitha.pembelajaran.kuis.Kuis;
+import org.skripsi.fitha.pembelajaran.latihan.Latihan;
 import org.skripsi.fitha.pembelajaran.materi.Materi;
 
 import android.app.Activity;
@@ -8,7 +10,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.Toast;
 
 public class MenuUtama extends Activity implements OnClickListener {
 	private Button btnMenuUtamaMateri;
@@ -44,12 +45,12 @@ public class MenuUtama extends Activity implements OnClickListener {
 			MenuUtama.this.finish();
 			break;
 		case R.id.btnMenuUtamaKuis:
-			Toast.makeText(getApplicationContext(), "Masih belum dibuat",
-					Toast.LENGTH_SHORT).show();
+			intent = new Intent(getApplicationContext(), Kuis.class);
+			startActivity(intent);
 			break;
 		case R.id.btnMenuUtamaLatihan:
-			Toast.makeText(getApplicationContext(), "Masih belum dibuat",
-					Toast.LENGTH_SHORT).show();
+			intent = new Intent(getApplicationContext(), Latihan.class);
+			startActivity(intent);
 			break;
 		case R.id.btnMenuUtamaMateri:
 			intent = new Intent(getApplicationContext(), Materi.class);
